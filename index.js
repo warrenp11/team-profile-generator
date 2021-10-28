@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
+const Engineer = require('./lib/Engineer');
 
 const init = () => {
+    this.engineer = [];
+
     inquirer
         .prompt([
             {
@@ -26,8 +29,6 @@ const init = () => {
             }
         ])
         .then(({name, id, email, role}) => {
-            console.log({name, id, email, role});
-
             // IF 'Engineer' is chosen
                 // THEN ask for github username
                 // THEN add github username to employee object
@@ -42,8 +43,9 @@ const init = () => {
                         }
                     ])
                     .then(({github}) => {
-                        console.log({github});
-                    })
+                        this.engineer.push(new Engineer(name, id, email, github));
+                        console.log(this.engineer);
+                    });
             }
 
             
