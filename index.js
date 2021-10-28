@@ -38,13 +38,21 @@ const init = () => {
                             type: 'input',
                             name: 'github',
                             message: 'What is this employee\'s GitHub username?'
+                        },
+                        {
+                            type: 'confirm',
+                            name: 'addEmployee',
+                            message: 'Would you like to add another employee?',
+                            default: false
                         }
                     ])
-                    .then(({github}) => {
-                        // this.engineer.push(new Engineer(name, id, email, github));
-                        // console.log(this.engineer);
+                    .then(({github, addEmployee}) => {
                         employees.push(new Engineer(name, id, email, github));
                         console.log(employees);
+
+                        if (addEmployee) {
+                            return init();
+                        }
                     });
             } else if (role === 'Intern') {
                 inquirer
@@ -53,11 +61,21 @@ const init = () => {
                             type: 'input',
                             name: 'school',
                             message: 'What is this employee\'s school?'
+                        },
+                        {
+                            type: 'confirm',
+                            name: 'addEmployee',
+                            message: 'Would you like to add another employee?',
+                            default: false
                         }
                     ])
-                    .then(({school}) => {
+                    .then(({school, addEmployee}) => {
                         employees.push(new Intern(name, id, email, school));
                         console.log(employees);
+
+                        if (addEmployee) {
+                            return init();
+                        }
                     });
             } else if (role === 'Manager') {
                 inquirer
@@ -66,11 +84,21 @@ const init = () => {
                             type: 'input',
                             name: 'office',
                             message: 'What is this employee\'s office number?'
+                        },
+                        {
+                            type: 'confirm',
+                            name: 'addEmployee',
+                            message: 'Would you like to add another employee?',
+                            default: false
                         }
                     ])
-                    .then(({office}) => {
+                    .then(({office, addEmployee}) => {
                         employees.push(new Manager(name, id, email, office));
                         console.log(employees);
+
+                        if (addEmployee) {
+                            return init();
+                        }
                     });
             }
         });
