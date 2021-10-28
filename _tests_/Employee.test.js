@@ -7,3 +7,9 @@ test('creates an employee object', () => {
     expect(employee.id).toBe('11');
     expect(employee.email).toBe('tom@email.com');
 });
+
+test('gets employee name', () => {
+    const employee = new Employee('tom', '11', 'tom@email.com');
+
+    expect(employee.getName()).toEqual(expect.stringContaining('tom'));
+});
