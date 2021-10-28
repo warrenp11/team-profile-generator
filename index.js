@@ -1,11 +1,11 @@
 const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+
+let employees = [];
 
 const init = () => {
-    this.engineer = [];
-    this.intern = [];
-
     inquirer
         .prompt([
             {
@@ -31,17 +31,6 @@ const init = () => {
             }
         ])
         .then(({name, id, email, role}) => {
-
-            // IF 'Engineer' is chosen
-                // THEN ask for github username
-                // THEN add github username to Engineer object
-            // ELSE IF 'Intern' is chosen
-                // THEN ask for school
-                // THEN add school to Intern object
-            // ELSE 'Manager' is chosen
-                // THEN ask for office number
-                // THEN add office number to Manager object
-
             if (role === 'Engineer') {
                 inquirer
                     .prompt([
@@ -52,8 +41,10 @@ const init = () => {
                         }
                     ])
                     .then(({github}) => {
-                        this.engineer.push(new Engineer(name, id, email, github));
-                        console.log(this.engineer);
+                        // this.engineer.push(new Engineer(name, id, email, github));
+                        // console.log(this.engineer);
+                        employees.push(new Engineer(name, id, email, github));
+                        console.log(employees);
                     });
             } else if (role === 'Intern') {
                 inquirer
@@ -65,12 +56,23 @@ const init = () => {
                         }
                     ])
                     .then(({school}) => {
-                        this.intern.push(new Intern(name, id, email, school));
-                        console.log(this.intern);
+                        employees.push(new Intern(name, id, email, school));
+                        console.log(employees);
+                    });
+            } else if (role === 'Manager') {
+                inquirer
+                    .prompt([
+                        {
+                            type: 'input',
+                            name: 'office',
+                            message: 'What is this employee\'s office number?'
+                        }
+                    ])
+                    .then(({office}) => {
+                        employees.push(new Manager(name, id, email, office));
+                        console.log(employees);
                     });
             }
-            
-            
         });
 };
 
