@@ -3,6 +3,12 @@ const inquirer = require('inquirer');
 inquirer
     .prompt([
         {
+            type: 'list',
+            name: 'role',
+            message: 'What is this employee\'s role?',
+            choices: ['Engineer', 'Intern', 'Manager']
+        },
+        {
             type: 'input',
             name: 'name',
             message: 'What is the employee\'s name?'
