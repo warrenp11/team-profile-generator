@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const init = () => {
     this.engineer = [];
+    this.intern = [];
 
     inquirer
         .prompt([
@@ -29,9 +31,16 @@ const init = () => {
             }
         ])
         .then(({name, id, email, role}) => {
+
             // IF 'Engineer' is chosen
                 // THEN ask for github username
-                // THEN add github username to employee object
+                // THEN add github username to Engineer object
+            // ELSE IF 'Intern' is chosen
+                // THEN ask for school
+                // THEN add school to Intern object
+            // ELSE 'Manager' is chosen
+                // THEN ask for office number
+                // THEN add office number to Manager object
 
             if (role === 'Engineer') {
                 inquirer
@@ -46,13 +55,22 @@ const init = () => {
                         this.engineer.push(new Engineer(name, id, email, github));
                         console.log(this.engineer);
                     });
+            } else if (role === 'Intern') {
+                inquirer
+                    .prompt([
+                        {
+                            type: 'input',
+                            name: 'school',
+                            message: 'What is this employee\'s school?'
+                        }
+                    ])
+                    .then(({school}) => {
+                        this.intern.push(new Intern(name, id, email, school));
+                        console.log(this.intern);
+                    });
             }
-
             
-            // IF 'Intern' is chosen...
-                // THEN ask for school...
-            // IF 'Manager' is chosen...
-                // THEN ask for office number...
+            
         });
 };
 
