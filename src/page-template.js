@@ -16,7 +16,42 @@ const generateTeam = data => {
         `
         return engineerHtml;
     });
-    return [engineer];
+    
+    const intern = data.interns.map(function(info) {
+        let internHtml = `
+            <div class="card">
+                <div class="card-header">
+                    <h5>Intern</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">${info.name}</h6>
+                    <p class="card-text">ID: ${info.id}</p>
+                    <p class="card-text">Email: ${info.email}</p>
+                    <p class="card-text">School: ${info.school}</p>
+                </div>
+            </div>
+        `
+        return internHtml;
+    });
+
+    const manager = data.managers.map(function(info) {
+        let managerHtml = `
+            <div class="card">
+                <div class="card-header">
+                    <h5>Manager</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">${info.name}</h6>
+                    <p class="card-text">ID: ${info.id}</p>
+                    <p class="card-text">Email: ${info.email}</p>
+                    <p class="card-text">Office: ${info.office}</p>
+                </div>
+            </div>
+        `
+        return managerHtml;
+    });
+    
+    return [engineer, intern, manager];
 };
 
 const generatePage = data => {
