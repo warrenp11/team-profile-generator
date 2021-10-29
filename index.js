@@ -2,11 +2,15 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const generatePage = require('./src/page-template');
 
-let employees = [];
+let engineers = [];
+let interns = [];
+let managers = [];
+let employees = {engineers, interns, managers};
 
 const init = () => {
-    inquirer
+    return inquirer
         .prompt([
             {
                 type: 'input',
@@ -32,7 +36,7 @@ const init = () => {
         ])
         .then(({name, id, email, role}) => {
             if (role === 'Engineer') {
-                inquirer
+                return inquirer
                     .prompt([
                         {
                             type: 'input',
@@ -47,7 +51,7 @@ const init = () => {
                         }
                     ])
                     .then(({github, addEmployee}) => {
-                        employees.push(new Engineer(name, id, email, github));
+                        engineers.push(new Engineer(name, id, email, github));
                         console.log(employees);
 
                         if (addEmployee) {
@@ -55,7 +59,7 @@ const init = () => {
                         }
                     });
             } else if (role === 'Intern') {
-                inquirer
+                return inquirer
                     .prompt([
                         {
                             type: 'input',
@@ -70,7 +74,7 @@ const init = () => {
                         }
                     ])
                     .then(({school, addEmployee}) => {
-                        employees.push(new Intern(name, id, email, school));
+                        interns.push(new Intern(name, id, email, school));
                         console.log(employees);
 
                         if (addEmployee) {
@@ -78,7 +82,7 @@ const init = () => {
                         }
                     });
             } else if (role === 'Manager') {
-                inquirer
+                return inquirer
                     .prompt([
                         {
                             type: 'input',
@@ -93,7 +97,7 @@ const init = () => {
                         }
                     ])
                     .then(({office, addEmployee}) => {
-                        employees.push(new Manager(name, id, email, office));
+                        managers.push(new Manager(name, id, email, office));
                         console.log(employees);
 
                         if (addEmployee) {
@@ -104,7 +108,7 @@ const init = () => {
         });
 };
 
-init()
+init();
     // .then(answers => {
-    //     return generateTeam(answers);
+    //     console.log(generatePage(answers));
     // });
