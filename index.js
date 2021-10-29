@@ -104,4 +104,7 @@ const init = () => {
         });
 };
 
-init();
+init()
+    // .then(answers => {
+    //     return generateTeam(answers);
+    // });
