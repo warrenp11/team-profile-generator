@@ -1,26 +1,4 @@
-const generateTeam = data => {
-    
-    const engineer = data.engineers.map(function(info) {
-        let engineerHtml = `
-            <div class="card">
-                <div class="card-header">
-                    <h5>Engineer</h5>
-                </div>
-                <div class="card-body">
-                    <h6 class="card-title">${info.name}</h6>
-                    <p class="card-text">ID: ${info.id}</p>
-                    <p class="card-text">Email: ${info.email}</p>
-                    <p class="card-text">GitHub: ${info.github}</p>
-                </div>
-            </div>
-        `
-        return engineerHtml;
-    });
-    return [engineer];
-};
 
-const generatePage = data => {
-    return `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -40,14 +18,23 @@ const generatePage = data => {
             <div class="container">
                 <div class="row">
                 <div class="col-sm">
-                    ${generateTeam(data)}
+                    
+            <div class="card">
+                <div class="card-header">
+                    <h5>Engineer</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">peter</h6>
+                    <p class="card-text">ID: peter</p>
+                    <p class="card-text">Email: peter</p>
+                    <p class="card-text">GitHub: peter</p>
+                </div>
+            </div>
+        
                 </div>
                 </div>
             </div>
             </main>
         </body>
         </html>
-    `;
-};
-
-module.exports = generatePage;
+    

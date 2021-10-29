@@ -3,6 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const generatePage = require('./src/page-template');
+const writeFile = require('./src/generate-page')
 
 let engineers = [];
 let interns = [];
@@ -108,7 +109,10 @@ const init = () => {
         });
 };
 
-init();
-    // .then(answers => {
-    //     console.log(generatePage(answers));
-    // });
+init()
+    .then(teamData => {
+        return generatePage(employees);
+    })
+    .then(pageHtml => {
+        return writeFile(pageHtml);
+    });
