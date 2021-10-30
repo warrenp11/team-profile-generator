@@ -10,7 +10,7 @@ const generateTeam = data => {
                     <h6 class="card-title">${info.name}</h6>
                     <p class="card-text">ID: ${info.id}</p>
                     <p class="card-text">Email: <a href='mailto:${info.email}'>${info.email}</a></p>
-                    <p class="card-text">GitHub: ${info.github}</p>
+                    <p class="card-text">GitHub: <a href="https://github.com/${info.github}" target="_blank">${info.github}</a></p>
                 </div>
             </div>
         `
