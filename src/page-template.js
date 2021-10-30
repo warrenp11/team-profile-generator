@@ -9,7 +9,7 @@ const generateTeam = data => {
                 <div class="card-body">
                     <h6 class="card-title">${info.name}</h6>
                     <p class="card-text">ID: ${info.id}</p>
-                    <p class="card-text">Email: ${info.email}</p>
+                    <p class="card-text">Email: <a href='mailto:${info.email}'>${info.email}</a></p>
                     <p class="card-text">GitHub: ${info.github}</p>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const generateTeam = data => {
                 <div class="card-body">
                     <h6 class="card-title">${info.name}</h6>
                     <p class="card-text">ID: ${info.id}</p>
-                    <p class="card-text">Email: ${info.email}</p>
+                    <p class="card-text">Email: <a href='mailto:${info.email}'>${info.email}</a></p>
                     <p class="card-text">School: ${info.school}</p>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const generateTeam = data => {
                 <div class="card-body">
                     <h6 class="card-title">${info.name}</h6>
                     <p class="card-text">ID: ${info.id}</p>
-                    <p class="card-text">Email: ${info.email}</p>
+                    <p class="card-text">Email: <a href='mailto:${info.email}'>${info.email}</a></p>
                     <p class="card-text">Office: ${info.office}</p>
                 </div>
             </div>
