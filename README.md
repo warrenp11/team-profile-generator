@@ -68,7 +68,7 @@ Enter all the information for the employee and add as many additional employees 
 
 Once user has added all members an `index.html` file will be created in the `dist/` folder showing all employees that were added
 
-**{recording of application in use}**
+[Click Here](https://watch.screencastify.com/v/fNRDvDWQ18CmVE24x9am) to see a video demonstration of the application in use
 
 ## Tests
 To run the tests for this application, enter the following command from the root directory:
