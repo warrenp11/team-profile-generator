@@ -6,13 +6,16 @@
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Tests](#tests)
 * [Credits](#credits)
 * [Project Insight](#project-insight)
 * [Questions](#questions)
 * [License](#license)
 
 ## Description
-This project was designed as a homework assignment for Rutgers Coding Boot Camp. We were required to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Additionally, we were required to write unit tests for each part of our code and ensure that it passes all of the tests. No starter code was provided for this assignment.
+This project was designed as a homework assignment for Rutgers Coding Boot Camp. We were required to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Additionally, we were required to write unit tests for each part of our code and ensure that it passes all of the tests. 
+
+No starter code was provided for this assignment.
 
         Acceptance Criteria
 
@@ -35,27 +38,51 @@ This project was designed as a homework assignment for Rutgers Coding Boot Camp.
         THEN I exit the application, and the HTML is generated
 
 ## Installation
+1. Copy one of the clone links from the GitHub [repository](https://www.github.com/warrenp11/team-profile-generator)
+* HTTPS `https://github.com/warrenp11/team-profile-generator.git`
+* SSH  `git@github.com:warrenp11/team-profile-generator.git` 
+
+2. In a new Bash or Terminal Window, navigate to the directory where the repository will be added
+
+3. Clone the repository with the following command:
+
+           git clone <username@host:/path/to/repository>
+
+4. Open repository in preferred code editor
+
+5. In the terminal, navigate to the root folder, and install the dependencies with the command:
+
+           npm i
+
 >*Make sure the following packages are installed prior to running the application:*
 >* Inquirer
 >* Jest
 
->1. Copy the clone link of the repository from GitHub.
-
->2. Open Bash or Terminal Window.
-
->3. When the console opens, navigate to the directory the repository will be added to, type the command git clone and paste the link to repository.
-
->4. Open repository in preferred code editor.
-
->5. Open terminal in code editor.
-
->6. Type in terminal npm i or npm install to install dependency packages needed.
 
 ## Usage
+When you're ready to run the application, from the root directory enter the following command into your command line:
+
+           node index
+
+Enter all the information for the employee and add as many additional employees as desired
+
+Once user has added all members an `index.html` file will be created in the `dist/` folder showing all employees that were added
+
+**{recording of application in use}**
+
+## Tests
+To run the tests for this application, enter the following command from the root directory:
+
+            npm run test
 
 ## Credits
+[Inquirer](https://www.npmjs.com/package/inquirer)
+
+[Node.js](https://nodejs.org/en/docs/)
 
 ## Project Insight
+Setting up the project presented a new challenge for me. I wasn't quite sure how to go about setting up the project directory, but thankfully some suggestions were made to us that pointed me in the right direction. Another challenge was the testing of the different constructor functions for each class. The process of testing in a 'red light, green light" manner is entirely new to me.
+
 
 ## Questions
 If you have any questions about this project contact me directly at warrenp11@gmail.com. 
